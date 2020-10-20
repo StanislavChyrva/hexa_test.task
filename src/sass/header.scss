@@ -66,7 +66,7 @@
   line-height: 1.2;
   text-align: center;
   border-radius: 4px;
-  background: $button-background-gradient;
+  background: $background-gradient--first;
   box-sizing: border-box;
   padding: 9px 11px;
   outline: none;
@@ -86,6 +86,7 @@
   height: 35px;
   @include flex-cc;
   background-color: $background-color--secondary;
+  user-select: none;
 
   ul {
     @include flex-cc;

@@ -1,0 +1,49 @@
+@import "variables";
+@import "mixins";
+
+.advantages {
+  width: 100vw;
+  background: $background-color--third;
+  display: flex;
+  justify-content: center;
+}
+
+.advantages__items-wrapper {
+  width: 100%;
+  max-width: 1240px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  justify-items: center;
+  align-items: start;
+}
+
+.advantages__item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+
+.advantages__item-ico {
+  width: 98px;
+  height: 98px;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+.advantages__item-title {
+  font-size: 22px;
+  font-family: "Proxima Nova Bold", sans-serif;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 17px;
+}
+
+.advantages__item-description {
+  font-size: 20px;
+  line-height: 1.1;
+  text-align: center;
+}

@@ -3,8 +3,10 @@ $text-color--secondary: #fff;
 
 $background-color--main: #fff;
 $background-color--secondary: rgba(0, 0, 0, .6);
+$background-color--third: rgba(255, 255, 255, .8);
 
-$button-background-gradient: linear-gradient(90deg, rgb(255, 79, 88) 0%, rgb(253, 112, 72) 100%);
+$background-gradient--first: linear-gradient(90deg, rgb(255, 79, 88) 0%, rgb(253, 112, 72) 100%);
+$background-gradient--second: linear-gradient( 0deg, rgb(42,235,42) 0%, rgb(0,117,0) 100%);
 
 $transition--main: .3s ease;
 
