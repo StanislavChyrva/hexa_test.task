@@ -6,3 +6,7 @@ Test task for front end position hexa
 2. Create folder ./dist
 3. In dist create empty folders: css, js, img, fonts
 4. Run in console 'gulp dev'
+
+## slider library
+In the project I am using swiper.js: https://swiperjs.com/
+
