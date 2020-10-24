@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
+    "del": "^6.0.0",
     "reset-css": "^5.0.1"
   }
 }

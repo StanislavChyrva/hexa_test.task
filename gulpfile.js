@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const del = require('del');
 const { series, parallel } = require('gulp');
 const autoPrefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean');
@@ -11,6 +12,12 @@ var sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
 
+function html() {
+    return gulp.src('src/*.html')
+        .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.stream());
+}
+
 function style() {
     return gulp.src('src/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -19,7 +26,7 @@ function style() {
             overrideBrowserslist: ['last 2 versions'],
             cascade: false
         }))
-        // .pipe(cleanCSS({level: 2}))
+        .pipe(cleanCSS({level: 2}))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 }
@@ -44,6 +51,10 @@ function image() {
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'))
         .pipe(browserSync.stream());
+}
+
+function cleanHtml() {
+    return del('dist/*.html')
 }
 
 function cleanCss() {
@@ -81,6 +92,6 @@ function watch() {
 }
 
 
-exports.build = series(parallel(cleanCss, cleanJs, cleanImg, cleanFonts), parallel(style, script, image, fonts));
+exports.build = series(parallel(cleanHtml, cleanCss, cleanJs, cleanImg, cleanFonts), parallel(html, style, script, image, fonts));
 exports.dev = series(exports.build, watch);
 
