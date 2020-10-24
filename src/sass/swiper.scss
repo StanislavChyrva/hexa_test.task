@@ -1,9 +1,9 @@
 @import "variables";
 
 .main-background {
-  position: absolute!important;
+  position: absolute !important;
   top: 0;
-  left:0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: $z-index--negative;
@@ -15,31 +15,44 @@
 
 .swiper-wrapper {
   height: 100%;
-  transition: 1s ease!important;
+  transition: 1s ease !important;
 }
 
 .swiper-slide {
   height: 100% !important;
-  background-position: center!important;
-  background-size: cover!important;
+  background-position: center !important;
+  background-size: cover !important;
 }
-
 
 
 .main__swiper-items-wrapper {
   display: flex;
   align-items: center;
   margin-top: 48px;
+  z-index: $z-index--middle;
 }
 
 .main__swiper-button-next, .main__swiper-button-prev {
-cursor: pointer;
+  cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+
   &:focus {
-    border: unset!important;
-    outline: unset!important;
+    border: unset !important;
+    outline: unset !important;
+    background: unset;
+  }
+
+  img {
+    &:focus {
+      border: unset !important;
+      outline: unset !important;
+      background: unset;
+    }
   }
 }
+
 .main__swiper-button-next {
 
 }
@@ -58,11 +71,12 @@ cursor: pointer;
   width: 12px !important;
   height: 12px !important;
   background: unset !important;
-  margin: 0!important;
-  margin-right: 15px!important;
+  margin: 0 !important;
+  margin-right: 15px !important;
   position: relative;
-  transition: $transition--main!important;
-  opacity: 1!important;
+  transition: $transition--main !important;
+  opacity: 1 !important;
+
   &::after {
     content: '';
     display: block;
@@ -73,17 +87,40 @@ cursor: pointer;
     height: 8px;
     background: unset;
     border-radius: 50%;
-    transition: $transition--main!important;
+    transition: $transition--main !important;
   }
 
   &:last-of-type {
-    margin-right: unset!important;
+    margin-right: unset !important;
   }
 }
 
 .swiper-pagination-bullet-active {
   background: #000 !important;
+
   &::after {
     background: #fff;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-background {
+    height: calc(485px + 56px + 35px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-background {
+    height: calc(485px + 56px);
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .main__swiper-items-wrapper {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 }

@@ -60,11 +60,20 @@
 body {
   font-family: "Proxima Nova Regular", sans-serif;
   position: relative;
+  overflow-x: hidden;
+}
+
+body.scroll-lock {
+  overflow-y: hidden;
 }
 
 a {
   text-decoration: none;
-  color: $text-color--main;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 
