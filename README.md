@@ -1,6 +1,9 @@
 # hexa_test.task
 Test task for front end position hexa
 
+## task runner
+Gulp.js
+
 ## to run dev task:
 1. Install app using 'npm i' or 'yarn install'
 2. Create folder ./dist
